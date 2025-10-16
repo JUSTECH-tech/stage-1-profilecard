@@ -1,0 +1,238 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ body {
+    background: linear-gradient(135deg, #001f3f, #003366, #004080);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+  }
+
+  .time-container {
+      text-align: center;
+      background: rgba(26, 14, 95, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 60px;
+      box-shadow: 0 0 30px rgba(0, 120, 255, 0.4);
+      animation: fadeIn 1.2s ease-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .time-container:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 50px rgba(0, 180, 255, 0.6);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #a0c4ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h1::before {
+      content: "🕓";
+      font-size: 1.4rem;
+    }
+
+    .time {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #e0eaff;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .date {
+      font-size: 1.1rem;
+      color: #a9bcd0;
+      margin-top: 5px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 15px #0077ff; }
+    to { box-shadow: 0 0 25px #00ccff; }
+  }
+
+  
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+/* Card Container */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  max-width: 850px;
+  width: 90%;
+  padding: 30px;
+  animation: fadeInUp 1.2s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Avatar */
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #00aaff;
+  box-shadow: 0 0 20px #0077ff;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.avatar img:hover {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 0 30px #00ccff;
+}
+
+/* Info Section */
+.details {
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.bio {
+  color: #bfc8ff;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.time {
+  color: #b0baf5;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+/* Social Links */
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.social-links a {
+  color: #00c3ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Hobbies & Dislikes */
+section {
+  margin-bottom: 20px;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #00baff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #dfe3ff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+ul li:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .profile-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+    text-align: left;
+  }
+
+  .avatar {
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
+
+  .details {
+    flex: 1;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+}
